@@ -19,7 +19,7 @@ const student2: Student = {
   location: 'Ethiopia',
 };
 
-const studentList: Array<Student> = [student1, student2];
+const studentsList: Student[] = [student1, student2];
 
 const body: HTMLBodyElement = document.getElementsByTagName('body')[0];
 const table: HTMLTableElement = document.createElement('table');
@@ -27,12 +27,12 @@ const thead: HTMLTableSectionElement = document.createElement('thead');
 const th1: HTMLTableCellElement = document.createElement('th');
 const th2: HTMLTableCellElement = document.createElement('th');
 
-th1.innerText = 'First Name';
-th2.innerText = 'Location';
+th1.textContent = 'First Name';
+th2.textContent = 'Location';
 th1.style.border = '1px solid gray';
 th2.style.border = '1px solid gray';
-th1.style.padding = '.5rem';
-th2.style.padding = '.5rem';
+th1.style.padding = '0.5rem';
+th2.style.padding = '0.5rem';
 table.style.border = '1px solid gray';
 table.style.borderCollapse = 'collapse';
 
@@ -41,22 +41,22 @@ thead.append(th2);
 
 table.append(thead);
 
-studentList.forEach((student) => {
+studentsList.forEach((student) => {
   const row: HTMLTableRowElement = document.createElement('tr');
 
-  const column1: HTMLTableCellElement = document.createElement('td');
-  const column2: HTMLTableCellElement = document.createElement('td');
+  const cell1: HTMLTableCellElement = document.createElement('td');
+  const cell2: HTMLTableCellElement = document.createElement('td');
 
-  column1.innerText = student.firstName;
-  column2.innerText = student.location;
+  cell1.textContent = student.firstName;
+  cell2.textContent = student.location;
 
-  column1.style.border = '1px solid gray';
-  column2.style.border = '1px solid gray';
-  column1.style.padding = '.5rem';
-  column2.style.padding = '.5rem';
+  cell1.style.border = '1px solid gray';
+  cell2.style.border = '1px solid gray';
+  cell1.style.padding = '0.5rem';
+  cell2.style.padding = '0.5rem';
 
-  row.append(column1);
-  row.append(column2);
+  row.append(cell1);
+  row.append(cell2);
 
   table.append(row);
 });
